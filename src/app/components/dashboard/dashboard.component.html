@@ -1,0 +1,35 @@
+<!-- <app-header></app-header>
+<div class="row">
+  <div class="col-md-3">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="col-md-1">
+    <p>
+      dashboard works!
+    </p>
+  </div>
+</div> -->
+
+<header class="tp">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <app-header></app-header>
+
+      </div>
+    </div>
+  </div>
+</header>
+<section class="sidenav">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <app-sidenav></app-sidenav>
+      </div>
+      <div class="col-md-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>
+

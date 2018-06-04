@@ -1,0 +1,14 @@
+
+.sidenav ul li {
+    list-style-type: none;
+    padding: 10px 10px;
+    /* background: #007bff; */
+}
+.sidenav li {
+    background: #0056a5;
+    margin-bottom: 10px;
+    color:#fff;
+}
+.sidenav ul {
+    padding-left: 0px;
+}
