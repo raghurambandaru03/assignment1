@@ -1,3 +1,73 @@
-<p>
-  single-order works!
-</p>
+
+
+<div class="row">
+  <div class="col-md-6">
+  <div class="form-group">
+    <label for="usr">OrderId </label>
+    <input type="text" class="form-control" id="usr" >
+  </div>
+</div>
+<div class="col-md-6">
+    <div class="form-group btncls">
+     
+     <button type="submit" class="btn btn-md btn-primary">Search</button>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-9">
+      <table style="width: 100%;" border="1">
+          <tbody>
+          <tr>
+          <td style="text-align: center;">Order list</td>
+          </tr>
+          </tbody>
+          </table>
+          <p><!-- DivTable.com --></p>
+          <table style="width: 100%;" border="1">
+          <tbody>
+          <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          </tr>
+          <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          </tr>
+          <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          </tr>
+          </tbody>
+          </table>
+          <!-- DivTable.com -->
+    </div>
+</div>    
+
+<br>
+<div class="row">
+  <div class="col-md-9">
+    <table datatable class="row-border hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First name</th>
+          <th>Last name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of  data;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{item.firstname}}</td>
+          <td>{{item.lastname}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

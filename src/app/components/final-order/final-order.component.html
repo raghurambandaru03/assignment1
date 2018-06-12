@@ -1,3 +1,29 @@
-<p>
-  final-order works!
-</p>
+<div class="row">
+  
+    <div class="col-md-6">
+            <div class="form-group">
+                <label for="sel1">Country(select one):</label>
+                <select class="form-control" id="sel1">
+                  <option>India</option>
+                  <option>China</option>
+                  <option>japan</option>
+                  <option>Usa</option>
+                </select>
+            </div>
+           </div>
+           <div class="col-md-3">
+              <button type="submit" class="btn btn-md btn-primary btnnn">Submit</button>
+           </div>
+         
+
+</div>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <div [chart]="barChart"></div>
+  </div>
+  <div class="col-md-6">
+    <div [chart]="pieChart"></div>
+  </div>
+</div>

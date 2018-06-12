@@ -1,0 +1,82 @@
+<!-- <form>
+  
+    <fieldset>
+  
+      <legend>Register</legend>
+      <div class="form-group">
+        <p>Name</p>
+        <input class="form-control" type="text" name="name" placeholder="First Last" required>
+      </div>
+      <p>Email Address</p>
+      <input type="email" name="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" placeholder="name@site.com" required>
+  
+      <p>Username</p>
+      <input type="text" pattern=".{6,}" title="Must be at least 6 characters long" name="username" placeholder="Username" required>
+      
+      <p>Password</p>
+      <input type="password" id="pw" pattern=".{6,}" title="Must be at least 6 characters long" name="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" required>
+  
+      <p>Confirm Password</p>
+      <input type="password" id="pw_c" pattern="" name="password confirm" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" required>
+  
+      <input type="checkbox" name="agree" id="ca_tos" required>
+      <label for="ca_tos">I agree to the <a href="#">terms of service</a></label>
+  <br>
+      <button type="submit" name="sign up" id="ca_btn">Sign Up!</button>
+    
+    </fieldset>
+    
+  </form> -->
+<div class="register-page">
+  <div class="conatainer">
+    <div class="col-md-6 offset-md-3">
+      <form name="registerForm" #registerForm="ngForm" novalidate>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input class="form-control" type="text" name="name" placeholder="First Last" [(ngModel)]="user.name" #name="ngModel" required/>
+          <div *ngIf="name.errors && (name.dirty || name.touched)" class="error">
+            <div [hidden]="!name.errors.required">Please Enter Name</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input class="form-control" type="email" name="email" placeholder="Email" [(ngModel)]="user.email" #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+            required/>
+          <div *ngIf="email.errors && (email.dirty || email.touched)" class="error">
+            <div [hidden]="!email.errors.required">Please Enter Email ID</div>
+            <div [hidden]="!email.errors.pattern">Please Enter Valid Email ID</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input class="form-control" type="password" name="password" placeholder="Password..." [(ngModel)]="user.password" #password="ngModel"
+            pattern=".{6,}" required/>
+          <div *ngIf="password.errors && (password.dirty || password.touched)" class="error">
+            <div [hidden]="!password.errors.required">Please Enter Name</div>
+            <div [hidden]="!password.errors.pattern">Password should contains 6 or more characters</div>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cpassword">Confirm Password:</label>
+          <input class="form-control" type="password" name="cpassword" placeholder="Confirm password..." [(ngModel)]="user.cpassword"
+            #cpassword="ngModel" pattern={{user.password}} required/>
+          <div *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)" class="error">
+            <div [hidden]="!cpassword.errors.required">Please Enter Name</div>
+            <div [hidden]="!cpassword.errors.pattern">Password mismatched</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" name="agree" [(ngModel)]="user.agree" #agree="ngModel" required>
+          <label for="ca_tos">I agree to the
+            <a>terms of service</a>
+          </label>
+          <div *ngIf="agree.errors && (agree.dirty || agree.touched)" class="error">
+            <div [hidden]="!agree.errors.required">Please agree</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" (click)="register(user)" [disabled]="!registerForm.form.valid">Register</button>
+      </form>
+    </div>
+  </div>
+</div>

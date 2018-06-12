@@ -1,3 +1,53 @@
-<p>
-  multi-order works!
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <h4 style="text-align: center;    margin-bottom: 50px;">Multiple Order</h4>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="sel1">Country(select one):</label>
+            <select class="form-control" id="sel1">
+              <option>India</option>
+              <option>China</option>
+              <option>japan</option>
+              <option>Usa</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="col-md-3">
+        <label for="sel1">StartDate:</label>
+        <ng-datepicker [(ngModel)]="date" [options]="options" class="dtee" ></ng-datepicker>
+      </div>
+      <div class="col-md-3">
+          <label for="sel1">EndDate:</label>
+          <ng-datepicker [(ngModel)]="date" [options]="options" class="" ></ng-datepicker>
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-md btn-primary btnnn">Submit</button>
+          </div>
+  </div>
+
+  <div>
+      <div class="row">
+          <div class="col-md-9">
+            <table datatable class="row-border hover">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>First name</th>
+                  <th>Last name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of  data;let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{item.firstname}}</td>
+                  <td>{{item.lastname}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  </div>
